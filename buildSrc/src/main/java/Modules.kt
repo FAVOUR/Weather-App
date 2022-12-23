@@ -6,6 +6,7 @@ object Modules{
       implementation(AppDependencies.coreAndroidLibraries)
       implementation(AppDependencies.coreUiLibraries)
       implementation(AppDependencies.concurrency)
+      implementation(AppDependencies.di)
       implementation(AppDependencies.database)
       kapt(AppDependencies.kapt)
       implementation(AppDependencies.networkCall)

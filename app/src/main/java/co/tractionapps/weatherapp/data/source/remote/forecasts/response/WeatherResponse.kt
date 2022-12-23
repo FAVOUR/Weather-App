@@ -1,8 +1,8 @@
-package co.tractionapps.weatherapp.data.source.remote.forcasts.response
+package co.tractionapps.weatherapp.data.source.remote.forecasts.response
 
 import co.tractionapps.weatherapp.data.source.local.WeatherEntity
-import co.tractionapps.weatherapp.data.source.remote.forcasts.response.weather_response_objects.City
-import co.tractionapps.weatherapp.data.source.remote.forcasts.response.weather_response_objects.ForecastData
+import co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather_response_objects.City
+import co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather_response_objects.ForecastData
 
 //Model
 data class WeatherResponse(

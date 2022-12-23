@@ -38,6 +38,10 @@ object AppDependencies {
     //Gson
     private val gson = "com.google.code.gson:gson:${DependencyVersions.gson}"
 
+    //Di
+    private val dagger_hilt ="com.google.dagger:hilt-android:2.44"
+    private val dagger_hilt_kapt = "com.google.dagger:hilt-android-compiler:2.44"
+
 
     val database = arrayListOf<String>().apply {
         add(room_runtime)
@@ -47,6 +51,7 @@ object AppDependencies {
 
     val kapt = arrayListOf<String>().apply {
         add(room_kapt)
+        add(dagger_hilt_kapt)
     }
 
     val coreAndroidLibraries = arrayListOf<String>().apply {
@@ -56,6 +61,10 @@ object AppDependencies {
 
     val kotlin = arrayListOf<String>().apply {
         add(kotlinStdLib)
+    }
+
+    val di = arrayListOf<String>().apply {
+        add(dagger_hilt)
     }
 
     val coreUiLibraries = arrayListOf<String>().apply {

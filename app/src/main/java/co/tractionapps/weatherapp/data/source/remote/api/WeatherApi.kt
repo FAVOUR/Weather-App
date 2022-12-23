@@ -1,7 +1,7 @@
 package co.tractionapps.weatherapp.data.source.remote.api
 
 import co.tractionapps.weatherapp.data.Constants.API_KEY
-import co.tractionapps.weatherapp.data.source.remote.forcasts.response.WeatherResponse
+import co.tractionapps.weatherapp.data.source.remote.forecasts.response.WeatherResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

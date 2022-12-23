@@ -1,4 +1,4 @@
-package co.tractionapps.weatherapp.data.source.remote.forcasts.response.weather_response_objects
+package co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather_response_objects
 
 data class Main(
     val feels_like: Double,

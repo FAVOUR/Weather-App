@@ -5,14 +5,15 @@ import co.tractionapps.weatherapp.data.Constants.DEFAULT_COUNTRY
 import co.tractionapps.weatherapp.data.Constants.UNITS_KEY
 import co.tractionapps.weatherapp.data.source.local.WeatherDao
 import co.tractionapps.weatherapp.data.source.local.toWeatherData
-import co.tractionapps.weatherapp.data.source.remote.forcasts.RemoteWeatherDataSource
-import co.tractionapps.weatherapp.data.source.remote.forcasts.response.toWeatherEntity
+import co.tractionapps.weatherapp.data.source.remote.forecasts.RemoteWeatherDataSource
+import co.tractionapps.weatherapp.data.source.remote.forecasts.response.toWeatherEntity
 import co.tractionapps.weatherapp.model.WeatherData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import retrofit2.Response
+import javax.inject.Inject
 
-class DefaultWeatherRepo(
+class DefaultWeatherRepo @Inject constructor(
     private val remoteWeatherDataSource: RemoteWeatherDataSource,
     private val weatherDao: WeatherDao,
 ) : WeatherRepository {
