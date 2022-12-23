@@ -1,9 +1,9 @@
-package co.tractionapps.weatherapp.source.remote.forcasts.response.weather_response_objects
+package co.tractionapps.weatherapp.data.source.remote.forcasts.response.weather_response_objects
 
 data class Main(
     val feels_like: Double,
     val grnd_level: Int,
-    val humidity: Int,
+    val humidity: Double,
     val pressure: Int,
     val sea_level: Int,
     val temp: Double,
