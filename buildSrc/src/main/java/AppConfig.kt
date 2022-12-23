@@ -8,5 +8,5 @@ object AppConfig {
 
     const val androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
     const val proguardConsumerRules = "consumer-rules.pro"
-    const val applicationId = "co.tractionapps.weatherapp"
+    const val applicationId = "co.favour.weatherapp"
 }

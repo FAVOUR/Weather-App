@@ -1,4 +1,4 @@
-package co.tractionapps.weatherapp
+package co.favour.weatherapp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

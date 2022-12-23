@@ -14,7 +14,7 @@ android {
     buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId = AppConfig.applicationId //"co.tractionapps.weatherapp"
+        applicationId = AppConfig.applicationId
         minSdkVersion(AppConfig.minSdk)
         targetSdkVersion(AppConfig.targetSdk)
         versionCode = AppConfig.versionCode
