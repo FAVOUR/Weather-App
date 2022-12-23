@@ -42,6 +42,13 @@ object AppDependencies {
     private val dagger_hilt ="com.google.dagger:hilt-android:2.44"
     private val dagger_hilt_kapt = "com.google.dagger:hilt-android-compiler:2.44"
 
+    //KTX
+    private val fragmentKtx =  "androidx.fragment:fragment-ktx:${DependencyVersions.fragmentktx_version}"
+    private val viewmodelKtx =  "androidx.lifecycle:lifecycle-viewmodel-ktx:${DependencyVersions.lifecycle_version}"
+
+    //Navigation Component
+    private val navigation_fragment =  "androidx.navigation:navigation-fragment-ktx:${DependencyVersions.nav_version}"
+    private val navigation_ktx = "androidx.navigation:navigation-ui-ktx:${DependencyVersions.nav_version}"
 
     val database = arrayListOf<String>().apply {
         add(room_runtime)
@@ -71,6 +78,10 @@ object AppDependencies {
         add(constraintLayout)
         add(viewModel)
         add(material)
+        add(fragmentKtx)
+        add(viewmodelKtx)
+        add(navigation_fragment)
+        add(navigation_ktx)
 
     }
 

@@ -18,6 +18,10 @@ object NetworkModule {
     private const val HTTP_CACHE_SIZE = 1024 * 1024 * 1024L
     private const val CONNECTION_TIMEOUT_SECONDS = 600L
 
+
+    @Provides
+    fun provideBaseUrl(): String = "https://api.openweathermap.org/data/2.5/"
+
     @Provides
     @Singleton
     fun provideOkHttpClient(

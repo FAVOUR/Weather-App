@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="card_title">
+
+        <item name="android:textSize">
+            @dimen/text_12
+        </item>
+        <item name="fontStyle">normal</item>
+        <item name="android:textFontWeight" tools:ignore="NewApi">700</item>
+        <item name="android:letterSpacing">
+            0.03
+        </item>
+
+        <item name="android:textColor">
+            @color/textTitleColor
+        </item>
+
+    </style>
+
+
+</resources>

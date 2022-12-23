@@ -10,6 +10,9 @@ object DependencyVersions {
     val constraintLayout = "2.0.0-beta8"
     val material = "1.6.1"
     val lifecycle_version = "2.5.1"
+    val  fragmentktx_version = "1.5.0"
+    val nav_version = "2.5.0"
+
 
     //Concurrency
 
@@ -18,7 +21,7 @@ object DependencyVersions {
      val timber ="4.7.1"
 
     //Networking
-    val retrofit = "2.4.0" //Todo update the version
+    val retrofit = "2.9.0" //Todo update the version
     val retrofit_logger = "3.10.0" //Todo update the version
 
     //serializers/deserializers

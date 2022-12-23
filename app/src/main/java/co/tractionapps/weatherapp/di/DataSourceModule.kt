@@ -1,6 +1,7 @@
 package co.tractionapps.weatherapp.di
 
 import android.content.Context
+import co.tractionapps.weatherapp.data.source.remote.forecasts.DefaultWeatherDataSource
 import co.tractionapps.weatherapp.data.source.remote.forecasts.RemoteWeatherDataSource
 import dagger.Binds
 import dagger.Module
@@ -16,6 +17,6 @@ abstract class DataSourceModule {
     abstract fun provideContext(@ApplicationContext context: Context): Context
 
     @Binds
-    abstract fun bindRemoteWeatherDataSource(defaultRemoteWeatherDataSource: RemoteWeatherDataSource): RemoteWeatherDataSource
+    abstract fun bindRemoteWeatherDataSource(defaultRemoteWeatherDataSource: DefaultWeatherDataSource): RemoteWeatherDataSource
 
 }

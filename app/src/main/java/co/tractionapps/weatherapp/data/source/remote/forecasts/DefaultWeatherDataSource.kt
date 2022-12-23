@@ -9,6 +9,6 @@ class DefaultWeatherDataSource @Inject constructor(private val weatherApi: Weath
     RemoteWeatherDataSource {
 
     override suspend fun fetchWeatherData(queryParam: Map<String, String>): Response<WeatherResponse> {
-        return weatherApi.forCastBasedOnCountry(options = queryParam)
+        return weatherApi.gatWeatherForecast(options = queryParam)
     }
 }
