@@ -4,29 +4,32 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.tractionapps.weatherapp.data.Constants.DEFAULT_COUNTRY
 import co.tractionapps.weatherapp.data.Constants.METRIC
-import co.tractionapps.weatherapp.data.Constants.SECONDS_IN_A_DAY
 import co.tractionapps.weatherapp.data.source.repository.WeatherRepository
 import co.tractionapps.weatherapp.ui.model.toWeatherReport
 import co.tractionapps.weatherapp.ui.state.WeatherReportUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeatherVm  @Inject constructor(
-    private val weatherRepository: WeatherRepository
+class WeatherVm @Inject constructor(
+    private val weatherRepository: WeatherRepository,
 ) : ViewModel() {
 
-    private val _weatherReportUiState = MutableStateFlow<WeatherReportUiState>(WeatherReportUiState.Loading)
+    private val _weatherReportUiState =
+        MutableStateFlow<WeatherReportUiState>(WeatherReportUiState.Loading)
     val weatherReportUiState: StateFlow<WeatherReportUiState> = _weatherReportUiState
 
     init {
-        fetchWeatherReport(metric = METRIC, cityOrCountry =  DEFAULT_COUNTRY)
+        fetchWeatherReport(metric = METRIC, cityOrCountry = DEFAULT_COUNTRY)
         observeWeatherReport()
     }
 
-    private fun fetchWeatherReport(cityOrCountry: String, metric:String) {
+    private fun fetchWeatherReport(cityOrCountry: String, metric: String) {
         _weatherReportUiState.value = WeatherReportUiState.Loading
         viewModelScope.launch {
 
@@ -40,15 +43,15 @@ class WeatherVm  @Inject constructor(
 
     private fun observeWeatherReport() {
         viewModelScope.launch {
-                weatherRepository.observeWeather().map {
-                    it.map {
-                        it.toWeatherReport()
-                    }.apply {
-                        _weatherReportUiState.value = WeatherReportUiState.Success(this)
-                    }
-                }.launchIn(viewModelScope)
-            }
-
+            weatherRepository.observeWeather().map {
+                it.map {
+                    it.toWeatherReport()
+                }.apply {
+                    _weatherReportUiState.value = WeatherReportUiState.Success(this)
+                }
+            }.launchIn(viewModelScope)
         }
+
     }
+}
 

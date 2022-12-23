@@ -20,9 +20,9 @@ class WeatherEntity(
     val windSpeed: Double,
     val weatherDescription: String,
     val weatherCondition: String,
-    val icon:String,
-    val metric:String
-    )
+    val icon: String,
+    val metric: String,
+)
 
 //Mapper
 fun WeatherEntity.toWeatherData(): WeatherData {
@@ -30,7 +30,7 @@ fun WeatherEntity.toWeatherData(): WeatherData {
         timeInMills = timeInMillInUTC,
         location = city,
         country = country,
-        temprature =temp,
+        temprature = temp,
         feelsLike = tempFeelsLike,
         minTemprature = minTemp,
         maxTemp = maxTemp,

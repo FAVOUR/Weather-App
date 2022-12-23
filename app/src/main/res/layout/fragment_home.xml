@@ -24,12 +24,12 @@
 
             <TextView
                 android:id="@+id/action_back"
+                style="@style/card_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="16dp"
                 android:text="@string/close"
-                android:gravity="center"
-                style="@style/card_title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -47,21 +47,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-<!--            style="@style/title_bar"-->
-<!--            android:text="@string/count_title"-->
+            <!--            style="@style/title_bar"-->
+            <!--            android:text="@string/count_title"-->
 
             <TextView
                 android:id="@+id/action_save"
+                style="@style/card_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                style="@style/card_title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-<!--            android:text="@string/finish"-->
+            <!--            android:text="@string/finish"-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -69,9 +69,9 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
-<!--            android:background="@color/viewfinder_mask"-->
+            <!--            android:background="@color/viewfinder_mask"-->
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsingToolbarLayout"
@@ -90,37 +90,36 @@
                 <FrameLayout
                     android:id="@+id/frameEnableCamera"
                     android:layout_width="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_height="220dp">
-<!--                    android:background="@color/white_f7"-->
+                    android:layout_height="220dp"
+                    android:layout_gravity="center">
+                    <!--                    android:background="@color/white_f7"-->
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnEnableCamera"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:layout_gravity="center"
-                        />
-<!--                    android:text="@string/enable_camera"-->
-<!--                    style="@style/MButtonOutlined"-->
+                        android:layout_gravity="center" />
+                    <!--                    android:text="@string/enable_camera"-->
+                    <!--                    style="@style/MButtonOutlined"-->
                 </FrameLayout>
 
                 <FrameLayout
                     android:id="@+id/frame_scanner"
-                    android:visibility="gone"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"/>
+                    android:layout_height="220dp"
+                    android:visibility="gone" />
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_gravity="bottom"
                     android:layout_height="45dp"
-                    android:elevation="0dp"
+                    android:layout_gravity="bottom"
                     android:background="@color/white"
+                    android:elevation="0dp"
                     app:layout_collapseMode="pin">
 
-<!--                    <include layout="@layout/include_two_column_header"/>-->
+                    <!--                    <include layout="@layout/include_two_column_header"/>-->
 
                 </androidx.appcompat.widget.Toolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>

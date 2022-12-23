@@ -4,5 +4,5 @@ import co.tractionapps.weatherapp.data.source.remote.forecasts.response.WeatherR
 import retrofit2.Response
 
 interface RemoteWeatherDataSource {
-    suspend fun fetchWeatherData(queryParam: Map<String,String>): Response<WeatherResponse>
+    suspend fun fetchWeatherData(queryParam: Map<String, String>): Response<WeatherResponse>
 }

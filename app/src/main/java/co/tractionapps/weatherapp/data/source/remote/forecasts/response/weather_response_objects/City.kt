@@ -8,5 +8,5 @@ data class City(
     val population: Int,
     val sunrise: Int,
     val sunset: Int,
-    val timezone: Int
+    val timezone: Int,
 )

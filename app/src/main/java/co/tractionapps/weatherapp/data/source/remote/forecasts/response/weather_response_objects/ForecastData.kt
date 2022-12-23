@@ -1,6 +1,6 @@
 package co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather_response_objects
 
-data class ForecastData (
+data class ForecastData(
     val clouds: Clouds,
     val dt: Long,
     val dt_txt: String,
@@ -9,5 +9,5 @@ data class ForecastData (
     val sys: Sys,
     val visibility: Int,
     val weather: List<Weather>,
-    val wind: Wind
+    val wind: Wind,
 )

@@ -2,5 +2,5 @@ package co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather
 
 data class Coord(
     val lat: Double,
-    val lon: Double
+    val lon: Double,
 )

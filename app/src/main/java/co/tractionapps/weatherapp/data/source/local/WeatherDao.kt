@@ -12,7 +12,7 @@ interface WeatherDao {
     fun saveCurrentWeatherCondition(weatherEntity: WeatherEntity)
 
     @Query("SELECT * FROM weatherEntity")
-    fun observeWeather():Flow<List<WeatherEntity>>
+    fun observeWeather(): Flow<List<WeatherEntity>>
 
     @Query("DELETE FROM weatherEntity")
     fun deleteAllData()

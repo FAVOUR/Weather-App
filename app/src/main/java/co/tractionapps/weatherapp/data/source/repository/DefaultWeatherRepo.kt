@@ -18,7 +18,7 @@ import javax.inject.Inject
 class DefaultWeatherRepo @Inject constructor(
     private val remoteWeatherDataSource: RemoteWeatherDataSource,
     private val weatherDao: WeatherDao,
-    private val ioDispatcher: CoroutineDispatcher
+    private val ioDispatcher: CoroutineDispatcher,
 
     ) : WeatherRepository {
 
@@ -31,25 +31,25 @@ class DefaultWeatherRepo @Inject constructor(
     }
 
     override suspend fun updateWeatherByCountryandMetric(metric: String, cityOrCountry: String) {
-         withContext(ioDispatcher) {
+        withContext(ioDispatcher) {
 
-             val queryParameters = mapOf(UNITS_KEY to metric, COUNTRY_KEY to DEFAULT_COUNTRY)
-             val response =
-                 remoteWeatherDataSource.fetchWeatherData(queryParameters).extractResponse()
-             weatherDao.deleteAllData()
-             response.list.map { forecastData ->
-                 val city = response.city
-                 val weatherEntity = forecastData.toWeatherEntity(metric, city)
-                 weatherDao.saveCurrentWeatherCondition(weatherEntity)
-             }
-         }
+            val queryParameters = mapOf(UNITS_KEY to metric, COUNTRY_KEY to DEFAULT_COUNTRY)
+            val response =
+                remoteWeatherDataSource.fetchWeatherData(queryParameters).extractResponse()
+            weatherDao.deleteAllData()
+            response.list.map { forecastData ->
+                val city = response.city
+                val weatherEntity = forecastData.toWeatherEntity(metric, city)
+                weatherDao.saveCurrentWeatherCondition(weatherEntity)
+            }
+        }
     }
 
-    private fun  <T> Response<T>.extractResponse(): T{
-        return if(isSuccessful){
+    private fun <T> Response<T>.extractResponse(): T {
+        return if (isSuccessful) {
             body()!!
-        }else{
-           throw Throwable("An Error Occurred")
+        } else {
+            throw Throwable("An Error Occurred")
         }
     }
 

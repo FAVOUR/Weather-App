@@ -3,5 +3,5 @@ package co.tractionapps.weatherapp.data.source.remote.forecasts.response.weather
 data class Wind(
     val deg: Int,
     val gust: Double,
-    val speed: Double
+    val speed: Double,
 )

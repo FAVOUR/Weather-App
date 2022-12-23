@@ -1,7 +1,7 @@
 package co.tractionapps.weatherapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import co.tractionapps.weatherapp.R
 import dagger.hilt.android.AndroidEntryPoint
 

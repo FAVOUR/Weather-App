@@ -12,6 +12,6 @@ interface WeatherApi {
     @GET("forecast")
     suspend fun gatWeatherForecast(
         @QueryMap options: Map<String, String>,
-        @Query("appid") apiKey: String = APIKEY
+        @Query("appid") apiKey: String = APIKEY,
     ): Response<WeatherResponse>
 }
