@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import co.favour.weatherapp.data.source.local.WeatherDao
 
-@Database(entities = [WeatherEntity::class], version = 1, exportSchema = true)
+@Database(entities = [WeatherEntity::class], version = 1)
 abstract class WeatherDb : RoomDatabase() {
     abstract fun weatherDao(): WeatherDao
 }

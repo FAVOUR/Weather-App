@@ -20,12 +20,12 @@ android {
         versionCode = AppConfig.versionCode
         versionName = AppConfig.versionName
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                compilerArgumentProviders(RoomSchemaArgProvider(File(projectDir, "schemas")))
-            }
-        }
+//
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                compilerArgumentProviders(RoomSchemaArgProvider(File(projectDir, "schemas")))
+//            }
+//        }
     }
 
     viewBinding {
