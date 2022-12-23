@@ -1,4 +1,3 @@
-
 object AppConfig {
     const val compileSdk = 32
     const val minSdk = 21
@@ -8,6 +7,6 @@ object AppConfig {
     const val buildToolsVersion = "29.0.3"
 
     const val androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
-    const val proguardConsumerRules =  "consumer-rules.pro"
-    const val applicationId = "co.tractionapps.weatherapp"
+    const val proguardConsumerRules = "consumer-rules.pro"
+    const val applicationId = "co.favour.weatherapp"
 }

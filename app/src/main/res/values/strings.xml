@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Weather App</string>
+    <string name="fetching_weather_report">Fetching Weather Report</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="error">Error</string>
+    <string name="close">Close</string>
+
+
 </resources>

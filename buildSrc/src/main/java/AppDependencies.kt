@@ -31,13 +31,29 @@ object AppDependencies {
     // Network
     private val retrofit_gson_converter =
         "com.squareup.retrofit2:converter-gson:${DependencyVersions.retrofit}"
-    private val retrofix_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:${DependencyVersions.retrofit}"
+    private val retrofix_rxjava2 =
+        "com.squareup.retrofit2:adapter-rxjava2:${DependencyVersions.retrofit}"
     private val retrofit_http_logger =
         "com.squareup.okhttp3:logging-interceptor:${DependencyVersions.retrofit_logger}"
 
     //Gson
     private val gson = "com.google.code.gson:gson:${DependencyVersions.gson}"
 
+    //Di
+    private val dagger_hilt = "com.google.dagger:hilt-android:2.44"
+    private val dagger_hilt_kapt = "com.google.dagger:hilt-android-compiler:2.44"
+
+    //KTX
+    private val fragmentKtx =
+        "androidx.fragment:fragment-ktx:${DependencyVersions.fragmentktx_version}"
+    private val viewmodelKtx =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${DependencyVersions.lifecycle_version}"
+
+    //Navigation Component
+    private val navigation_fragment =
+        "androidx.navigation:navigation-fragment-ktx:${DependencyVersions.nav_version}"
+    private val navigation_ktx =
+        "androidx.navigation:navigation-ui-ktx:${DependencyVersions.nav_version}"
 
     val database = arrayListOf<String>().apply {
         add(room_runtime)
@@ -47,6 +63,7 @@ object AppDependencies {
 
     val kapt = arrayListOf<String>().apply {
         add(room_kapt)
+        add(dagger_hilt_kapt)
     }
 
     val coreAndroidLibraries = arrayListOf<String>().apply {
@@ -58,10 +75,18 @@ object AppDependencies {
         add(kotlinStdLib)
     }
 
+    val di = arrayListOf<String>().apply {
+        add(dagger_hilt)
+    }
+
     val coreUiLibraries = arrayListOf<String>().apply {
         add(constraintLayout)
         add(viewModel)
         add(material)
+        add(fragmentKtx)
+        add(viewmodelKtx)
+        add(navigation_fragment)
+        add(navigation_ktx)
 
     }
 
