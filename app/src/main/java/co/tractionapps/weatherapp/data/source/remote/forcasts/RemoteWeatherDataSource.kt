@@ -1,6 +1,6 @@
-package co.tractionapps.weatherapp.source.remote.forcasts
+package co.tractionapps.weatherapp.data.source.remote.forcasts
 
-import co.tractionapps.weatherapp.source.remote.forcasts.response.WeatherResponse
+import co.tractionapps.weatherapp.data.source.remote.forcasts.response.WeatherResponse
 import retrofit2.Response
 
 interface RemoteWeatherDataSource {

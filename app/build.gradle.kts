@@ -1,4 +1,3 @@
-import AppConfig.applicationId
 import Modules.appDependencies
 
 plugins {
@@ -21,6 +20,23 @@ android {
         versionCode = AppConfig.versionCode
         versionName = AppConfig.versionName
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
+//        consumerProguardFiles(AppConfig.proguardConsumerRules)
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = ["room.schemaLocation": "$projectDir/schemas"]
+//            }
+//        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                compilerArgumentProviders(
+                    RoomSchemaArgProvider(File(projectDir, "schemas"))
+                )
+            }
+        }
+
+
     }
 
 
@@ -36,9 +52,27 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
+
+
 }
+
 
 
 dependencies {
     appDependencies()
+}
+
+class RoomSchemaArgProvider(
+    @get:InputDirectory
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    val schemaDir: File
+) : CommandLineArgumentProvider {
+
+    override fun asArguments(): Iterable<String> {
+        // Note: If you're using KSP, you should change the line below to return
+        // listOf("room.schemaLocation=${schemaDir.path}")
+        return listOf("room.schemaLocation=${schemaDir.path}")
+    }
 }
